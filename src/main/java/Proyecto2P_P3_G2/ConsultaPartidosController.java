@@ -40,7 +40,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-
+import Herramientas.GestorImagenes;
+import Herramientas.ILlenarArrays;
+import Herramientas.GestorImagenes;
 /**
  * FXML Controller class
  *
@@ -75,7 +77,7 @@ public class ConsultaPartidosController implements Initializable {
     /**
      *
      */
-    public static ArrayList<Partido> partidos = Partido.cargarPartidos(Principal.pathFiles + "WorldCupMatchesBrasil2014.csv");
+    public static ArrayList<Partido> partidos = ILlenarArrays.cargarPartidos(Principal.pathFiles + "WorldCupMatchesBrasil2014.csv");
 
     /**
      * Variable estática que sirve para proveer los equipos a serializar al
@@ -212,11 +214,11 @@ public class ConsultaPartidosController implements Initializable {
             lbLocal.setText(cbequpo1.getValue().getNombre());
             lbVisitante.setText(cbequipo2.getValue().getNombre());
             lbEstadio.setText(partido.getEstadio());
-            Image igVisi = ManejoArchivos.abrirImagen(Principal.pathImgBanderas + cbequipo2.getValue().getAbreviatura() + ".jpg");
+            Image igVisi = GestorImagenes.abrirImagen(Principal.pathImgBanderas + cbequipo2.getValue().getAbreviatura() + ".jpg");
             igVisitante.setImage(igVisi);
             igVisitante.setFitHeight(30);
             igVisitante.setPreserveRatio(true);
-            Image igLoc = ManejoArchivos.abrirImagen(Principal.pathImgBanderas + cbequpo1.getValue().getAbreviatura() + ".jpg");
+            Image igLoc = GestorImagenes.abrirImagen(Principal.pathImgBanderas + cbequpo1.getValue().getAbreviatura() + ".jpg");
             igLocal.setImage(igLoc);
             igLocal.setFitHeight(30);
             igLocal.setPreserveRatio(true);
@@ -323,7 +325,7 @@ public class ConsultaPartidosController implements Initializable {
             Label nombre = new Label("Nombre");
             Label jugador = new Label("Jugador");
 
-            Image porDefecto = ManejoArchivos.abrirImagen(Principal.pathImg + "DEFAULT.png");
+            Image porDefecto = GestorImagenes.abrirImagen(Principal.pathImg + "DEFAULT.png");
             ImageView imgv = new ImageView(porDefecto);
             imgv.setFitHeight(90);
             imgv.setFitWidth(90);
@@ -473,14 +475,14 @@ public class ConsultaPartidosController implements Initializable {
         });
         Label lblNombre = (Label) contenedor.getChildren().get(1);
         Label lblJugador = (Label) contenedor.getChildren().get(2);
-        Image imgJugador = ManejoArchivos.abrirImagen(Principal.pathImg + jugadorSeleccionado.getImgPath());
+        Image imgJugador = GestorImagenes.abrirImagen(Principal.pathImg + jugadorSeleccionado.getImgPath());
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
                 if(imgJugador!=null){
                     imgvASetear.setImage(imgJugador);
                 }else{
-                    Image imgPorDefecto = ManejoArchivos.abrirImagen(Principal.pathImgGeneral+"defaultPlayer.png");
+                    Image imgPorDefecto = GestorImagenes.abrirImagen(Principal.pathImgGeneral+"defaultPlayer.png");
                     imgvASetear.setImage(imgPorDefecto);
                 }
                 lblNombre.setText(jugadorSeleccionado.getNombre());

@@ -163,11 +163,7 @@ public class Equipo implements Comparable<Equipo>, ILlenarArrays {
         this.jugadores=jugadoresE;
     }
 
-    @Override
-    public void buscarELemento(Object objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    
     
 
 

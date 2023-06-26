@@ -4,25 +4,21 @@
  */
 package Herramientas;
 
-import Modelo.Equipo;
-import Modelo.Jugador;
-import Modelo.Mundial;
-import Modelo.Partido;
 import java.util.ArrayList;
 
 /**
  *
  * @author Michael
  */
-public class CreacionData implements ICreacionArreglo{
-    public ArrayList<String[]> generarArreglo(String nombreArchivo,String separador){
+public class ProcesadorDatos {
+    public static ArrayList<String[]> generarArreglo(String nombreArchivo,String separador){
             //Se cree una lista de arreglos de Strings
             //Se crea una lista de Strings que guardará las líneas que devuelve el método LeeFichero
             //Luego se hace split a cada línea y cada arreglo de Strings se agrega a la lista de arreglos de 
             //String y se la retorna
             ArrayList<String> variableGenerado;
-            ManejoArchivos manejo= new ManejoArchivos();
-            variableGenerado=manejo.LeeFichero(nombreArchivo);
+            LectorArchivos lector=new LectorArchivos();
+            variableGenerado=lector.LeeFichero(nombreArchivo);
             ArrayList<String[] > arregloFinal= new ArrayList();
             for(int a=1;a<variableGenerado.size();a++){
                 String[] linea=variableGenerado.get(a).split(separador); 
@@ -31,8 +27,4 @@ public class CreacionData implements ICreacionArreglo{
         }
         return arregloFinal;
     }
-
-    
-
-   
 }

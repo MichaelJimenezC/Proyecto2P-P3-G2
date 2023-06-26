@@ -100,5 +100,5 @@ public interface ILlenarArrays {
         }
         return arregloPartido;
     }
-    void buscarELemento(Object objeto);
+    
 }

@@ -5,14 +5,11 @@
 package Herramientas;
 
 import java.util.ArrayList;
-import javafx.scene.image.Image;
 
 /**
  *
  * @author Michael
  */
-public interface IManejoArchivos {
+public interface IFileReader {
     ArrayList<String> LeeFichero(String nombrearchivo);
-    void EscribirArchivo(String nombreArchivo, String linea);   
-    Image abrirImagen(String nombreImagen);   
 }

@@ -118,8 +118,5 @@ public class ManejoArchivos implements IManejoArchivos{
        return img;
    }
 
-    @Override
-    public ArrayList<String[]> generarArreglo(String nombreArchivo, String separador) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 }

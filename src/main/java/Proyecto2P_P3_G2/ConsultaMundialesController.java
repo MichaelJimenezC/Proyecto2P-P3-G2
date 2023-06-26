@@ -23,7 +23,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-
+import Herramientas.ILlenarArrays;
+import Herramientas.GestorImagenes;
 /**
  * FXML Controller class
  *
@@ -39,7 +40,7 @@ public class ConsultaMundialesController implements Initializable {
     private Label lblAvisoConsulta;
     @FXML
     private HBox seccionDinamica;
-    private static ArrayList<Mundial> arrMundiales=Mundial.cargarMundiales();
+    private static ArrayList<Mundial> arrMundiales=ILlenarArrays.cargarMundiales();
 
     /**
      * Inicializa la clase controladora. Se añade un controlador de eventos a btnConsultar para un ActionEvent
@@ -169,7 +170,7 @@ public class ConsultaMundialesController implements Initializable {
             lblEquipo.setAlignment(Pos.BOTTOM_LEFT);
             HBox pais=new HBox();
             pais.setStyle("-fx-background-color:white");
-            Image bandera=ManejoArchivos.abrirImagen(Principal.pathImgBanderas+m.getFinalistas().get(i).getAbreviatura()+".jpg");
+            Image bandera=GestorImagenes.abrirImagen(Principal.pathImgBanderas+m.getFinalistas().get(i).getAbreviatura()+".jpg");
             ImageView imgvEquipo=new ImageView(bandera);
             imgvEquipo.setFitHeight(15);
             imgvEquipo.setPreserveRatio(true);
@@ -180,7 +181,7 @@ public class ConsultaMundialesController implements Initializable {
             paisCopas.setStyle("-fx-background-color:white");
             paisCopas.setMinHeight(25);
             paisCopas.setSpacing(5);
-            Image imgCopa=ManejoArchivos.abrirImagen(Principal.pathImgGeneral+"copa.png");
+            Image imgCopa=GestorImagenes.abrirImagen(Principal.pathImgGeneral+"copa.png");
             for(int a=0;a<m.getFinalistas().get(i).getMundialesGanados();a++){
                 ImageView imgv=new ImageView(imgCopa);
                 imgv.setFitHeight(25);

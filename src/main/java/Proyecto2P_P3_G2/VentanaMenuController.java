@@ -15,7 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-
+import Herramientas.GestorImagenes;
 
 
 
@@ -34,8 +34,8 @@ public class VentanaMenuController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        imgvPortada.setImage(ManejoArchivos.abrirImagen(Principal.pathImgGeneral+"portada1.jpg"));
-        imgvMiniatura.setImage(ManejoArchivos.abrirImagen(Principal.pathImgGeneral+"logoWorldCup.jpg"));
+        imgvPortada.setImage(GestorImagenes.abrirImagen(Principal.pathImgGeneral+"portada1.jpg"));
+        imgvMiniatura.setImage(GestorImagenes.abrirImagen(Principal.pathImgGeneral+"logoWorldCup.jpg"));
         // TODO
     }    
     /**
